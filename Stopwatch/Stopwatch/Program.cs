@@ -19,12 +19,18 @@ namespace Stopwatch
         static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("--Cronometro--\n\n");
+            Console.WriteLine("-- Cronometro --\n\n");
             Console.WriteLine("s = segundos     => use 10s -> 10 segundos");
             Console.WriteLine("m = minutos      => use 10m -> 10 minutos");
             Console.WriteLine("h = horas        => use 10h -> 10 horas");
             Console.WriteLine("0 = SAIR\n");
-            Console.WriteLine("\n Quanto tempo deseja contar?");
+
+            Console.WriteLine("Quanto tempo deseja contar?");
+            string data = Console.ReadLine().ToLower();
+            char type = char.Parse(data.Substring(data.Length -1, 1));
+            int time = int.Parse(data.Substring(0, data.Length - 1));
+            Console.WriteLine(type);
+            Console.WriteLine(time);
         }
 
         static void Start(int time)

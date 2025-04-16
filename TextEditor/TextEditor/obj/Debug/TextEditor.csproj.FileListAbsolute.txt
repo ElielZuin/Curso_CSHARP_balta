@@ -1,0 +1,7 @@
+C:\Users\eliel\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.exe.config
+C:\Users\eliel\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+C:\Users\eliel\source\repos\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+C:\Users\eliel\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.AssemblyReference.cache
+C:\Users\eliel\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+C:\Users\eliel\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.exe
+C:\Users\eliel\source\repos\TextEditor\TextEditor\obj\Debug\TextEditor.pdb

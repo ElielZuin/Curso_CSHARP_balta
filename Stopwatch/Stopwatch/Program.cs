@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,9 +13,24 @@ namespace Stopwatch
     {
         static void Main(string[] args)
         {
-            Menu();
-            
+            int fim = 1;
+            while (fim == 1)
+            {
+                Menu();
+
+                Console.WriteLine("\nDeseja atribuir outro valor para o cronometro?");
+                Console.WriteLine("(0) Não");
+                Console.WriteLine("(1) Sim");
+                fim = int.Parse(Console.ReadLine());
+
+                if (fim != 1)
+                {
+                    System.Environment.Exit(0);
+                }
+            }
         }
+
+         
 
         static void Menu()
         {
@@ -23,14 +39,30 @@ namespace Stopwatch
             Console.WriteLine("s = segundos     => use 10s -> 10 segundos");
             Console.WriteLine("m = minutos      => use 10m -> 10 minutos");
             Console.WriteLine("h = horas        => use 10h -> 10 horas");
-            Console.WriteLine("0 = SAIR\n");
 
             Console.WriteLine("Quanto tempo deseja contar?");
             string data = Console.ReadLine().ToLower();
             char type = char.Parse(data.Substring(data.Length -1, 1));
             int time = int.Parse(data.Substring(0, data.Length - 1));
-            Console.WriteLine(type);
-            Console.WriteLine(time);
+            int multiplier = 1;
+            
+
+            if (type == 'm')
+            {
+                multiplier = 60;
+            }
+
+            else if (type == 'h')
+            {
+                multiplier = 60 * 60;
+            }
+
+            Start(time * multiplier);
+        }
+
+        static void PreStart()
+        {
+
         }
 
         static void Start(int time)
@@ -42,7 +74,7 @@ namespace Stopwatch
                 Console.Clear();
                 currentTime++;
                 Console.WriteLine(currentTime);
-                Thread.Sleep(900);
+                Thread.Sleep(1000);
             }
             Console.Clear();
             Console.WriteLine("Stopwatch finalizado.");

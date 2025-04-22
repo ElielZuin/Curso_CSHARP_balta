@@ -11,7 +11,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Equals();
+            Indices();
         }
         
         //guids
@@ -100,6 +100,17 @@ namespace Strings
             Console.WriteLine(texto.Equals("este texto é um teste", StringComparison.OrdinalIgnoreCase));
 
 
+        }
+
+        static void Indices()
+        {
+            var texto = "Este texto é um teste";
+
+            Console.WriteLine(texto.IndexOf("é")); //isso busca dentro do array(texto/string) a
+                                                   //posicao do caracter
+
+            Console.WriteLine(texto.IndexOf("um"));
+            Console.WriteLine(texto.IndexOf("e"));
         }
     }
 }

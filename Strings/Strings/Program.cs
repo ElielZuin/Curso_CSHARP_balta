@@ -10,7 +10,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Comparacao();
+            Swew();
         }
         
         //guids
@@ -62,7 +62,32 @@ namespace Strings
 
             Console.WriteLine(texto2.Contains("teste"));        //aq retorna um booleano, no caso como tem
                                                                 // a palavra teste na string, vai ser true
-            Console.WriteLine(texto2.Contains("Teste"));        // aq vai ser falso pq o T ta mauisculo
+            Console.WriteLine(texto2.Contains("Teste"));           // aq vai ser falso pq o T ta mauisculo
+
+            //Console.WriteLine(texto2.Contains("Teste",StringComparison.OrdinalIgnoreCase)); // aq ele ignora o sensitivecase
+                         //entao tanto faz se o t ta mauisculo ou minusculo. assim q ignora o case sensitive
+
+
+
+            //contains é para ver se tem algo na string e compare to é para comparar o resultado, ele retorna a quantia
+            //de resultados que ha na string. ( ele usa o 0 1 2 3 4 5) e o contains retorna true or false
+        }               
+
+        //starts with / ends with
+        static void Swew()
+        {
+            var texto = "Este texto é um teste";
+            Console.WriteLine(texto);
+            // o starts with retorna um booleano assim como o endwith. nesse caso o SW é basicamente COMECA COM
+            Console.WriteLine(texto.StartsWith("este"));    //falso pq comeca com E maiusculo
+            Console.WriteLine(texto.StartsWith("Este"));    //true
+            Console.WriteLine(texto.StartsWith("texto"));   //falso pq n comeca com a palavra texto
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine(texto.EndsWith("Teste"));
+            Console.WriteLine(texto.EndsWith("teste"));
+            Console.WriteLine(texto.EndsWith("eliel"));
+
+
         }
     }
 }

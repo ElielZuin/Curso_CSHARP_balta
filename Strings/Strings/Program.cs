@@ -11,7 +11,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Indices();
+            StringBuilder();
         }
         
         //guids
@@ -102,6 +102,7 @@ namespace Strings
 
         }
 
+        //indices no array
         static void Indices()
         {
             var texto = "Este texto é um teste";
@@ -110,7 +111,72 @@ namespace Strings
                                                    //posicao do caracter
 
             Console.WriteLine(texto.IndexOf("um"));
-            Console.WriteLine(texto.IndexOf("e"));
+            Console.WriteLine(texto.LastIndexOf("s")); //ultima posicao que o caracter aparece
         }
+
+        //Metodos adicionais toupper tolower etc
+        static void Metodos()
+        {
+            var texto = "Este texto é um teste";
+
+            Console.WriteLine(texto.ToLower()); //deixa tudo minusculo
+            Console.WriteLine(texto.ToUpper()); //deixa tudo maiusculo
+            Console.WriteLine(texto.Insert(5,"AQUI ")); //vai inserir isso no texto
+            //ele pede primeiro o lugar onde o texto vai entrar e dps o texto
+            Console.WriteLine(texto.Remove(5, 5)); // o oposto do de cima
+            Console.WriteLine(texto.Length); //da o tamanho em INT do array/string
+
+            //manipulando strings
+
+
+
+        }
+
+        //manipulano string
+        static void ManipulandoStrings()
+        {
+            //replace
+            var texto = "Este texto é um teste";
+            Console.WriteLine(texto.Replace("Este", "isto")); //troca o este por isto
+            Console.WriteLine(texto.Replace("e", "X")); //funciona pro texto todo como aq
+
+                                                //split
+            //var divisao = texto.Split("e");
+            //Console.WriteLine(divisao[0]);
+            //  Console.WriteLine(divisao[1]);
+            //Console.WriteLine(divisao[2]);            //tudo bug
+            // Console.WriteLine(divisao[3]);
+
+
+            var resultado = texto.Substring(5, 5);
+            Console.WriteLine(resultado);
+            
+            var resultado2 = texto.Substring(5, texto.LastIndexOf("o"));
+            Console.WriteLine(resultado2);
+
+            Console.WriteLine(texto.Trim()); //remove os espacos do 1 e do ultimo caracter
+            //normalmente usado para quando vamos fazer um formulario e tal pra alguem preencher um email
+            //por exemplo, e o imbecil sem querer coloca ESPACO no comeco; ai o TRIM remove isso ja. TOP
+        }
+
+        //string builder
+        static void StringBuilder()
+        {
+            var texto = "Este texto é um teste ne";
+            texto += " pai"; //concatenando a stringo hehe
+
+            //mas isso nao é legal isso pode sobrecarregar a memoria caso for um texto gigante tlgd
+            //agora para criar as linhas dinamicas pode usar o @ que quebra a linha igual daquele jeito
+            //pórem a melhor forma de fz isso é usando o append igual agr ehehehhehehehe
+
+            var texto2 = new StringBuilder(); // ele ja ta dentro do using System.Text
+
+            texto2.Append("Este texto é um teste. ");
+            texto2.Append("!O eliel é muito inteligente ");
+            texto2.Append("kkkkkkkkkkkkkkk");
+
+            Console.WriteLine(texto2);
+        }
+
     }
 }

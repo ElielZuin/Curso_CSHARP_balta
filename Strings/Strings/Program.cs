@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Strings
 {
@@ -10,7 +11,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Swew();
+            Equals();
         }
         
         //guids
@@ -64,7 +65,7 @@ namespace Strings
                                                                 // a palavra teste na string, vai ser true
             Console.WriteLine(texto2.Contains("Teste"));           // aq vai ser falso pq o T ta mauisculo
 
-            //Console.WriteLine(texto2.Contains("Teste",StringComparison.OrdinalIgnoreCase)); // aq ele ignora o sensitivecase
+           // Console.WriteLine(texto2.Contains("Teste", StringComparison.OrdinalIgnoreCase)); // aq ele ignora o sensitivecase
                          //entao tanto faz se o t ta mauisculo ou minusculo. assim q ignora o case sensitive
 
 
@@ -84,8 +85,19 @@ namespace Strings
             Console.WriteLine(texto.StartsWith("texto"));   //falso pq n comeca com a palavra texto
             Console.WriteLine("\n\n\n");
             Console.WriteLine(texto.EndsWith("Teste"));
-            Console.WriteLine(texto.EndsWith("teste"));
+            Console.WriteLine(texto.EndsWith("teste"));     //ends with é basicamente TERMINA COM
             Console.WriteLine(texto.EndsWith("eliel"));
+
+
+        }
+
+        //equals
+        static void Equals()
+        {
+            var texto = "Este texto é um teste";
+            Console.WriteLine(texto.Equals("Este texto é um teste"));
+            Console.WriteLine(texto.Equals("este texto é um teste"));
+            Console.WriteLine(texto.Equals("este texto é um teste", StringComparison.OrdinalIgnoreCase));
 
 
         }

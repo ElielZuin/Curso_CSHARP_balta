@@ -31,9 +31,10 @@ namespace EditorHTML
                 file.Append(Environment.NewLine);
             } 
             while (Console.ReadKey().Key != ConsoleKey.Escape);
-            file.ToString();
+            
 
             Console.WriteLine("----------------");
+            Viewer.Show(file.ToString());
             Console.WriteLine(" Deseja salvar o arquivo?");
             Console.WriteLine("1 - Sim");
             Console.WriteLine("2 - Não");
@@ -41,18 +42,23 @@ namespace EditorHTML
             var option = short.Parse(Console.ReadLine());
            
             switch(option){
-                case 1: Salvar(file); break;
+                case 1: Salvar(file.ToString()); break;
                 default: Show(); break;
                 }
-            }
+        }
 
        
        
 
-        public static void Salvar(StringBuilder file)
+
+
+
+
+        public static void Salvar(string file)
         {
-            Console.Clear();
+            
             Console.WriteLine("Qual caminho para salvar o arquivo??");
+            Console.WriteLine("C:/dev/nome arquivo.txt");
             var caminho = Console.ReadLine();
 
             using (var arquivo = new StreamWriter(caminho))

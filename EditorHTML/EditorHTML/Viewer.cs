@@ -19,14 +19,16 @@ namespace EditorHTML
             Console.Clear();
 
             Console.WriteLine("Qual o caminho do arquivo?");
+            Console.WriteLine("C:/dev/nome arquivo.txt");
+            Console.WriteLine("--------------------------\n");
             string caminho = Console.ReadLine();
 
             using (var arquivo = new StreamReader(caminho))
             {
-                string texto = arquivo.ReadToEnd();
-                Console.WriteLine(texto);
-
+                string text = arquivo.ReadToEnd();
+                Replace(text);
             }
+
             Console.WriteLine("");
             Console.ReadLine();
             Menu.Show();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,6 +10,29 @@ namespace EditorHTML
 {
     public class Viewer
     {
+        
+        public static void Open()
+        {
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            Console.WriteLine("Qual o caminho do arquivo?");
+            string caminho = Console.ReadLine();
+
+            using (var arquivo = new StreamReader(caminho))
+            {
+                string texto = arquivo.ReadToEnd();
+                Console.WriteLine(texto);
+
+            }
+            Console.WriteLine("");
+            Console.ReadLine();
+            Menu.Show();
+        }
+
+        
         public static void Show(string text)
         {
             Console.Clear();

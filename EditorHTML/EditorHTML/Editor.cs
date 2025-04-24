@@ -16,8 +16,8 @@ namespace EditorHTML
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
 
-            Console.WriteLine("   MODO EDITOR");
-            Console.WriteLine("-----------------");
+            Console.WriteLine("   MODO EDITOR (ESC em uma linha vazia para sair...)");
+            Console.WriteLine("-------------------------------------------------------");
             Start();
         }
 
@@ -46,13 +46,6 @@ namespace EditorHTML
                 default: Show(); break;
                 }
         }
-
-       
-       
-
-
-
-
 
         public static void Salvar(string file)
         {

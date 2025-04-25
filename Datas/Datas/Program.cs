@@ -11,8 +11,10 @@ namespace Datas
         static void Main(string[] args)
         {
             //var data = new DateTime();
-            
-            var data = DateTime.Now;
+
+            //var data = DateTime.Now;
+
+            var data = new DateTime(2025, 04, 24, 23,53,38);
             
             Console.WriteLine(data);
         }

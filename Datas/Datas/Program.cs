@@ -10,6 +10,11 @@ namespace Datas
     {
         static void Main(string[] args)
         {
+            //var data = new DateTime();
+            
+            var data = DateTime.Now;
+            
+            Console.WriteLine(data);
         }
     }
 }

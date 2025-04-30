@@ -13,7 +13,7 @@ namespace Datas
             //var data = new DateTime();
 
             //var data = DateTime.Now;
-            FormatandoDatas();
+            ExcluindoOuAdicionandoAlgoNaData();
 
 
         }
@@ -74,8 +74,33 @@ namespace Datas
             // f combina data e hora
             // g combina data e hora so que no short( curto)
             
-            
+               // o melhor é usar o 'r' pq ele ja formata no padrao q a maioria usa
+               // R tb da
+               // s sortibledatetime é bem utilizado para datas do json, caso for converter
+               //algo pro front usamos {0:s}
+
+                //da pra usar o 'u' tb pro mongoDB
+                
+
+
+
             Console.WriteLine(formatada);
         }
+
+        static void ExcluindoOuAdicionandoAlgoNaData()
+        {
+            var data = DateTime.Now;
+
+            
+            Console.WriteLine(data.AddDays(12));
+
+            
+            Console.WriteLine(data.AddMonths(2));
+
+           
+            Console.WriteLine(data.AddYears(5));
+        }
+
+
     }
 }
